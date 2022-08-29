@@ -77,16 +77,17 @@ public static void FindElementByIndex(int[] indexes, int[,] inArray)
 public static double[] FindArithmeticMeanOfColumns(int[,] integerMatrix)
 {
     int count = integerMatrix.GetLength(1);
+    int index = integerMatrix.GetLength(0);
     double[] result = new double[count];
-    for (int i = 0; i < integerMatrix.GetLength(1); i++)
+    for (int i = 0; i < count; i++)
     {
         int sum = 0;
-        for (int j = 0; j < integerMatrix.GetLength(0); j++)
+        for (int j = 0; j < index; j++)
         {
             sum +=integerMatrix[j, i];
 
         }
-        result[i]= (double)sum/count;
+        result[i]= (double)sum/index;
     }
     return result;
 }
